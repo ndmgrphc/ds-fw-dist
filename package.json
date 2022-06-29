@@ -1,0 +1,32 @@
+{
+  "name": "ds-firmware",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github-ndmgrphc:ndmgrphc/ds-firmware.git",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "bonjour": "^3.5.0",
+    "bonjour-service": "^1.0.8",
+    "conf": "^10.1.2",
+    "dotenv": "^16.0.0",
+    "fastify": "^3.17.0",
+    "fastify-cors": "^6.0.1",
+    "fastify-http-proxy": "^6.2.1",
+    "fastify-static": "^4.5.0",
+    "node-json-db": "^1.3.0",
+    "rpi-gpio": "^2.1.7",
+    "tree-kill": "^1.2.2",
+    "ws": "^7.4.6"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
