@@ -1,14 +1,11 @@
 [Unit]
 Description=Initializes a new dropstation
-ConditionPathExists=|!/etc/hostname
 Wants=network-pre.target
 Before=network-pre.target
-After=local-fs.target
-After=sys-subsystem-net-devices-eth0.device
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c "/home/ds/ds-fw-dist/init.sh"
+ExecStart=/usr/bin/bash -c "/home/ds/ds-fw-dist/init.sh"
 RemainAfterExit=yes
 StandardOutput=/home/ds/ds-init-stdout.log
 StandardError=/home/ds/ds-init-stderr.log
