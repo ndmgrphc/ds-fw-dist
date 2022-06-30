@@ -28,8 +28,20 @@ echo "PORTAL_SSID=Dropstation-$RANDOMID" > /etc/environment
 echo "UI_DIRECTORY=/home/ds/ds-fw-dist/wifi-connect/build" >> /etc/environment
 
 # replace current hostname with new hostname
+
+echo "Adding Dropstation-$RANDOMID.local to /etc/hosts"
+cat >/etc/hosts <<EOL
+127.0.0.1	localhost
+::1		localhost ip6-localhost ip6-loopback
+ff02::1		ip6-allnodes
+ff02::2		ip6-allrouters
+
+127.0.1.1	Dropstation-${RANDOMID}.local
+EOL
+
+#sed -i "s/$HOSTNAME/Dropstation-$RANDOMID.local/g" /etc/hosts
+
 echo "Setting hostname to Dropstation-$RANDOMID.local"
-sed -i "s/$HOSTNAME/Dropstation-$RANDOMID.local/g" /etc/hosts
 echo "Dropstation-$RANDOMID.local" > /etc/hostname
 
 # this is to update the current hostname without restarting
