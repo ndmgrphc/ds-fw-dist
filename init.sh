@@ -25,6 +25,7 @@ echo "$RANDOMID" >> /DSID.env
 echo "Modifying /etc/environment for $RANDOMID"
 # overwrite contents of /etc/environment
 echo "PORTAL_SSID=Dropstation-$RANDOMID" > /etc/environment
+echo "UI_DIRECTORY=/home/ds/ds-fw-dist/wifi-connect/build" >> /etc/environment
 
 # replace current hostname with new hostname
 echo "Setting hostname to Dropstation-$RANDOMID.local"

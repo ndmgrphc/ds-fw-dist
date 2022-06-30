@@ -23,7 +23,9 @@ if [ $? -eq 0 ]; then
     printf 'Skipping WiFi Connect, has active connection...\n'
 else
     printf 'Starting WiFi Connect\n'
-    wifi-connect --ui-directory /home/ds/ds-fw-dist/wifi-connect/build
+    wifi-connect
 fi
+
+# do this with /etc/environment UI_DIRECTORY instead... --ui-directory /home/ds/ds-fw-dist/wifi-connect/build
 
 # Start your application here.
