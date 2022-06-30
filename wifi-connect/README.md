@@ -1,6 +1,10 @@
 See: https://planb.nicecupoftea.org/2019/01/11/balenas-wifi-connect-easy-wifi-for-raspberry-pis/
 
-Systemd
+View debug/log:
+
+```shell script
+sudo journalctl -u wifi-connect-start
+```
 
 Move ./wifi-connect-start.service here:
 

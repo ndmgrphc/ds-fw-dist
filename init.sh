@@ -4,7 +4,7 @@
 # It assumes that you're starting with a base image with wifi-connect installed.
 #
 
-echo "RUNNING init.sh"
+echo "RUNNING init.sh..."
 
 FILE=/DSID.env
 if test -f "$FILE"; then
