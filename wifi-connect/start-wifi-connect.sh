@@ -20,7 +20,7 @@ sleep 20
 iwgetid -r
 
 if [ $? -eq 0 ]; then
-    printf 'Skipping WiFi Connect\n'
+    printf 'Skipping WiFi Connect, has active connection...\n'
 else
     printf 'Starting WiFi Connect\n'
     wifi-connect

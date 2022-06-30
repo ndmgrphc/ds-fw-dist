@@ -5,10 +5,10 @@ After=NetworkManager.service
 [Service]
 Type=simple
 EnvironmentFile=/etc/environment
-ExecStart=/home/ds/ds-firmware/wifi-connect/start-wifi-connect.sh
+ExecStart=/home/ds/ds-fw-dist/wifi-connect/start-wifi-connect.sh
 Restart=on-failure
-StandardOutput=/home/pi/wifi-connect-stdout.log
-StandardError=/home/pi/wifi-connect-stderr.log
+StandardOutput=/home/ds/wifi-connect-stdout.log
+StandardError=/home/ds/wifi-connect-stderr.log
 Type=idle
 User=root
 

@@ -8,8 +8,10 @@ After=sys-subsystem-net-devices-eth0.device
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c "/home/ds/ds-firmware/init.sh"
+ExecStart=/bin/bash -c "/home/ds/ds-fw-dist/init.sh"
 RemainAfterExit=yes
+StandardOutput=/home/ds/ds-init-stdout.log
+StandardError=/home/ds/ds-init-stderr.log
 
 [Install]
 WantedBy=network.target
