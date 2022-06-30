@@ -12,7 +12,7 @@ if test -f "$FILE"; then
     exit
 fi
 
-echo "RUNNING RANDOMID"
+echo "Generating random DSID..."
 
 # bash generate random 32 character alphanumeric string (upper and lowercase) and
 # BAD, will hang: randomString=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
@@ -23,13 +23,16 @@ echo "Saving /DSID.env for $RANDOMID"
 echo "$RANDOMID" >> /DSID.env
 
 echo "Modifying /etc/environment for $RANDOMID"
+# overwrite contents of /etc/environment
 echo "PORTAL_SSID=Dropstation-$RANDOMID" > /etc/environment
 
+# replace current hostname with new hostname
 echo "Setting hostname to Dropstation-$RANDOMID.local"
 sed -i "s/$HOSTNAME/Dropstation-$RANDOMID.local/g" /etc/hosts
 echo "Dropstation-$RANDOMID.local" > /etc/hostname
 
-hostname "Dropstation-$RANDOMID.local"  # this is to update the current hostname without restarting
+# this is to update the current hostname without restarting
+hostname "Dropstation-$RANDOMID.local"
 
 # Ignore below this line:
 
