@@ -23,7 +23,7 @@ if [ $? -eq 0 ]; then
     printf 'Skipping WiFi Connect, has active connection...\n'
 else
     printf 'Starting WiFi Connect\n'
-    wifi-connect
+    wifi-connect --ui-directory /home/ds/ds-fw-dist/wifi-connect/build
 fi
 
 # Start your application here.
