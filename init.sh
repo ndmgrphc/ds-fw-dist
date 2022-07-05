@@ -8,7 +8,9 @@ echo "RUNNING init.sh..."
 
 FILE=/DSID.env
 if test -f "$FILE"; then
-    echo "$FILE exists, exiting..."
+    echo "$FILE exists, starting node..."
+    cd /home/ds/ds-fw-dist
+    pm2 start index.js
     exit
 fi
 
