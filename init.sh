@@ -9,9 +9,6 @@ echo "RUNNING init.sh..."
 FILE=/DSID.env
 if test -f "$FILE"; then
     echo "$FILE exists, starting node..."
-    cd /home/ds/ds-fw-dist
-    # no dns yet git pull
-    pm2 start index.js
     exit
 fi
 
@@ -61,10 +58,7 @@ hostname "Dropstation-$RANDOMID.local"
 
 # run this?
 
-cd /home/ds/ds-fw-dist
-
-# git pull
-pm2 start index.js
+# cd /home/ds/ds-fw-dist
 
 echo "$RANDOMID is born."
 
