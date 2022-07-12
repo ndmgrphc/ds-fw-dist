@@ -1,6 +1,6 @@
 [Unit]
 Description=dropstation
-After=network.target
+After=wifi-connect-start.service
 
 [Service]
 Type=simple
@@ -11,3 +11,5 @@ Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
+
+# sudo ln -s /home/ds/ds-fw-dist/init/ds.service /lib/systemd/system/ds.service
