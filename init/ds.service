@@ -1,0 +1,13 @@
+[Unit]
+Description=dropstation
+After=network.target
+
+[Service]
+Type=simple
+User=node
+ExecStart=/usr/bin/node /home/ds/ds-fw-dist/index.js
+WorkingDirectory=/home/ds/ds-fw-dist
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
