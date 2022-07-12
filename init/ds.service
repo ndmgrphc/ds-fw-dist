@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-User=node
+User=ds
 ExecStart=/usr/bin/node /home/ds/ds-fw-dist/index.js
 WorkingDirectory=/home/ds/ds-fw-dist
 Restart=on-failure
