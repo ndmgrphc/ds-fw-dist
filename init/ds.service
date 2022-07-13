@@ -4,6 +4,7 @@ After=wifi-connect-start.service
 
 [Service]
 Type=simple
+EnvironmentFile=/etc/environment
 User=ds
 ExecStart=/usr/bin/node /home/ds/ds-fw-dist/index.js
 WorkingDirectory=/home/ds/ds-fw-dist
