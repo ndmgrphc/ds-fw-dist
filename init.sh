@@ -4,6 +4,11 @@
 # It assumes that you're starting with a base image with wifi-connect installed.
 #
 
+# first hello
+raspi-gpio set 23 op pn dh && raspi-gpio set 24 op pn dh && raspi-gpio set 25 op pn dh
+sleep 2
+raspi-gpio set 23 op pn dl && raspi-gpio set 24 op pn dl && raspi-gpio set 25 op pn dl
+
 echo "RUNNING init.sh...to build new dropstation."
 
 FILE=/DSID.env
