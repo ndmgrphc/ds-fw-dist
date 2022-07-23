@@ -17,3 +17,5 @@ if [[ $rc -eq 0 ]] ; then                # Make final determination.
 else
     #echo `say Timeout.`
 fi
+
+# https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/
