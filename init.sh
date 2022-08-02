@@ -12,9 +12,6 @@ if test -f "$SMB_CONF_SRC"; then
     sudo cp -fr "$SMB_CONF_SRC" /etc/samba/smb.conf
 fi
 
-# ensure packages?
-sudo apt-get --yes install mp3splt
-
 # first hello
 raspi-gpio set 23 op pn dh && raspi-gpio set 24 op pn dh && raspi-gpio set 25 op pn dh
 sleep 2

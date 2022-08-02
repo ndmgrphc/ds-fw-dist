@@ -12,3 +12,5 @@ StandardError=/home/ds/ds-init-stderr.log
 
 [Install]
 WantedBy=network.target
+
+# journalctl -fu ds-init
