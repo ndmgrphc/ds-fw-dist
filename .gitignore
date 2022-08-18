@@ -1,6 +1,7 @@
 .DSID
 package-lock.json
 .idea
+.idea/
 
 # Logs
 logs
