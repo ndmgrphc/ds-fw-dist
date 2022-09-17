@@ -9,6 +9,8 @@ User=ds
 ExecStart=/usr/bin/node /home/ds/ds-fw-dist/index.js
 WorkingDirectory=/home/ds/ds-fw-dist
 Restart=on-failure
+#StandardOutput=file:/home/ds/ds-stdout.log
+#StandardError=file:/home/ds/ds-stderr.log
 
 [Install]
 WantedBy=multi-user.target
