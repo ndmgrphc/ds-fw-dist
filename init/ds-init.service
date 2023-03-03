@@ -5,7 +5,7 @@ Before=network-pre.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/bash -c "/home/ds/ds-fw-dist/init.sh"
+ExecStart=-/usr/bin/bash -c "/home/ds/ds-fw-dist/init.sh"
 RemainAfterExit=yes
 StandardOutput=file:/home/ds/ds-init-stdout.log
 StandardError=file:/home/ds/ds-init-stderr.log

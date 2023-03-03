@@ -18,10 +18,26 @@ if test -f "$SWAP_CONF_SRC"; then
     sudo cp -fr "$SWAP_CONF_SRC" /etc/dphys-swapfile
 fi
 
+if uname -a | grep -q 'armv7l'; then
+    echo "init detected JUNE"
+    # raspbery pi
+    raspi-gpio set 23 op pn dh && raspi-gpio set 24 op pn dh && raspi-gpio set 25 op pn dh
+    sleep 2
+    raspi-gpio set 23 op pn dl && raspi-gpio set 24 op pn dl && raspi-gpio set 25 op pn dl
+else
+    echo "init detected SOQ2023"
+    if [ ! -d "/sys/class/gpio/gpio126" ]
+    then
+      echo "echo 126 > /sys/class/gpio/export && echo out > /sys/class/gpio/gpio126/direction" | sudo su
+    fi
+
+    echo "echo 1 > /sys/class/gpio/gpio126/value" | sudo su
+    sleep 2
+    echo "echo 0 > /sys/class/gpio/gpio126/value" | sudo su
+fi
+
 # first hello
-raspi-gpio set 23 op pn dh && raspi-gpio set 24 op pn dh && raspi-gpio set 25 op pn dh
-sleep 2
-raspi-gpio set 23 op pn dl && raspi-gpio set 24 op pn dl && raspi-gpio set 25 op pn dl
+
 
 echo "RUNNING init.sh...to build new dropstation."
 

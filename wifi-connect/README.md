@@ -1,5 +1,20 @@
 See: https://planb.nicecupoftea.org/2019/01/11/balenas-wifi-connect-easy-wifi-for-raspberry-pis/
 
+### Soquartz / 64 bit
+
+You can't install with the above instructions on soquartz or probably anything other than old raspbian.
+
+Question: is ```sudo nmcli radio wifi``` required?
+
+```shell
+# required now...or it will fail with "file not found" etc.
+sudo apt install dnsmasq-base
+```
+
+```shell
+curl -L https://github.com/balena-io/wifi-connect/raw/master/scripts/raspbian-install.sh | sed 's/\*rpi/*aarch64/' | bash
+```
+
 View debug/log:
 
 ```shell script
