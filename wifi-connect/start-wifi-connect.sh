@@ -3,7 +3,11 @@
 # export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 # ^^^ this can cause barfing and isn't needed
 
+printf 'Waiting to check wifi\n'
+
 sleep 20
+
+printf 'Done waiting to check wifi\n'
 
 # Choose a condition for running WiFi Connect according to your use case:
 
